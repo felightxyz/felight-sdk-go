@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+package types;
+option go_package = "github.com/felightxyz/felight-sdk-go/sdk/protobuf/types";
+
+// ----------------------------------------------------
+// The following messages are for public use.
+// -----------------------------------------------------
+message Tx {
+  // sender of the transaction
+  bytes from = 1;
+  // Encoded raw tx binary
+  bytes raw_tx = 2;
+}
+
+message TxsRequest {
+  string filter = 1;
+}
+
+message TxsResponse {
+  repeated Tx txs = 1;
+}
+

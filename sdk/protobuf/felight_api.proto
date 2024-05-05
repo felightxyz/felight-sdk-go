@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package api;
+option go_package = "github.com/felightxyz/felight-sdk-go/sdk/protobuf/api";
+
+import public "google/protobuf/empty.proto";
+import "felight_types.proto";
+
+service ApiEth {
+  // public APIs
+  rpc SubscribeNewTxs (types.TxsRequest) returns (stream types.TxsResponse) {}
+}
